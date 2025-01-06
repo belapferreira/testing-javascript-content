@@ -1,2 +1,2 @@
-# testing-javascript-content
-The code created while taking the couse Tesing Javascript with Kent. C Dodds
+# Testing JavaScript Content
+The code created while taking the couse Testing JavaScript with Kent. C Dodds
