@@ -1,4 +1,5 @@
 const { sum, sub } = require('../utils/math');
+const { test, expect } = require('../utils/testing-functions');	
 
 // Sum
 test('Sum numbers', () => {
@@ -15,26 +16,3 @@ test('Sub numbers', () => {
 
   expect(result).toBe(expected);
 });
-
-function test(title, callback) {
-  try {
-    callback();
-    console.log(`✔️ ${title}`);
-  } catch (error) {
-    console.log(`❌ ${title}`);
-    console.log(error);
-  }
-}
-
-function expect(actual) {
-  return {
-    toBe(expected) {
-      if (actual !== expected) {
-        throw new Error(`${actual} is not equal to ${expected}`);
-      } else {
-        console.log(`The result is equal to ${actual}`);
-      }
-    }
-  }
-}
-
