@@ -1,4 +1,4 @@
-const Worker = require('jest-worker').default;
+const { Worker } = require('jest-worker');
 const { fail, pass } = require('create-jest-runner');
 
 module.exports = async ({ testPath }) => {
