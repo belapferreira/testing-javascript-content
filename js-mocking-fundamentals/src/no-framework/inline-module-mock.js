@@ -1,7 +1,3 @@
-const assert = require('assert');
-const thumbWar = require('../thumb-war');
-const utils = require('../utils');
-
 function fn(implementation = () => {}) {
   const mockFn = (...args) => {
     mockFn.mock.calls.push(args);
@@ -17,18 +13,19 @@ function fn(implementation = () => {}) {
   return mockFn;
 }
 
-function spyOn(object, property) {
-  const originalValue = object[property];
+const utilsPath = require.resolve('../utils');
+require.cache[utilsPath] = {
+  id: utilsPath,
+  filename: utilsPath,
+  loaded: true,
+  exports: {
+    getWinner: fn((player1, _) => player1),
+  },
+};
 
-  object[property] = fn();
-
-  object[property].mockRestore = () => (object[property] = originalValue);
-}
-
-spyOn(utils, 'getWinner');
-
-// Override the getWinner property
-utils.getWinner.mockImplementation((player1, _) => player1);
+const assert = require('assert');
+const thumbWar = require('../thumb-war');
+const utils = require('../utils');
 
 const winner = thumbWar('Jane', 'John');
 assert.strictEqual(winner, 'Jane');
@@ -38,4 +35,4 @@ assert.deepStrictEqual(utils.getWinner.mock.calls, [
 ]);
 
 // Restore the original getWinner property
-utils.getWinner.mockRestore();
+delete require.cache[utilsPath];
