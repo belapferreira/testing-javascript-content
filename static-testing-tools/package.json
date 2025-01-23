@@ -1,22 +1,23 @@
 {
   "scripts": {
-    "build": "babel src --out-dir dist",
-    "lint": "eslint --ignore-path ../.gitignore .",
-    "prettier": "prettier --ignore-path ../.gitignore \"**/*.+(js|json)\"",
+    "build": "babel src --extensions .js,.ts --out-dir dist",
+    "lint": "eslint --ignore-path ../.gitignore --ext .js,.ts .",
+    "check-types": "tsc",
+    "prettier": "prettier --ignore-path ../.gitignore \"**/*.+(js|ts|json)\"",
     "format": "yarn prettier --write",
     "check-format": "yarn prettier --list-different",
-    "validate": "yarn check-format && yarn lint && yarn build"
+    "validate": "yarn check-types && yarn check-format && yarn lint && yarn build"
   },
   "devDependencies": {
     "@babel/cli": "^7.26.4",
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
     "eslint": "6.1.0",
-    "prettier": "^3.4.2"
-  },
-  "dependencies": {
-    "-": "^0.0.1",
-    "D": "^1.0.0",
-    "eslint-config-prettier": "^10.0.1"
+    "eslint-config-prettier": "^6.0.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
   }
 }
