@@ -12,6 +12,7 @@ function CalculatorDisplay({value, ...props}) {
   return (
     <div
       {...props}
+      id="calculator-display"
       style={{
         position: 'relative',
         color: 'white',
