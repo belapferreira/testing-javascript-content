@@ -13,7 +13,8 @@ function CalculatorDisplay({value, ...props}) {
     <div
       {...props}
       id="calculator-display"
-      style={{
+      // eslint-disable-next-line react/no-unknown-property
+      css={{
         position: 'relative',
         color: 'white',
         background: '#1c191c',
