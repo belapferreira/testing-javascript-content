@@ -16,5 +16,4 @@ module.exports = {
     '\\.module\\.css$': 'identity-obj-proxy',
     '\\.css$': require.resolve('./style-mock.js'),
   },
-  collectCoverageFrom: ['**/src/**/*.js'],
 }
