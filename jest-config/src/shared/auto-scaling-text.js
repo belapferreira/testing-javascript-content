@@ -4,7 +4,7 @@ import styles from './auto-scaling-text.module.css'
 
 function getScale(node) {
   // eslint-disable-next-line no-debugger
-  debugger  
+  debugger
   if (!node) {
     return 1
   }

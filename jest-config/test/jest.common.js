@@ -1,5 +1,5 @@
-  // Run in a node environment
-  // testEnvironment: 'jest-environment-node',
+// Run in a node environment
+// testEnvironment: 'jest-environment-node',
 
 const path = require('path')
 

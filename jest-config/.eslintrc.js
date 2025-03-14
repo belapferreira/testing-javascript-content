@@ -19,11 +19,13 @@ module.exports = {
     },
     {
       files: ['**/__tests__/**'],
-      settings: {'import/resolver': {
-        jest: {
-          jestConfigFile: path.join(__dirname, './jest.common.js'),
+      settings: {
+        'import/resolver': {
+          jest: {
+            jestConfigFile: path.join(__dirname, './jest.common.js'),
+          },
         },
-      }},
+      },
     },
   ],
 }

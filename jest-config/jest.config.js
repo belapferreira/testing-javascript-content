@@ -17,7 +17,7 @@ module.exports = {
       branches: 80,
       functions: 100,
       lines: 100,
-    }
+    },
   },
   projects: ['./test/jest.client.js', './test/jest.server.js'],
 }
