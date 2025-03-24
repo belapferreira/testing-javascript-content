@@ -6,7 +6,7 @@ function getScale(node) {
   // eslint-disable-next-line no-debugger
   debugger
   if (!node) {
-    return 1
+    return 2
   }
   const parentNode = node.parentNode
 
