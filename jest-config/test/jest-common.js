@@ -16,4 +16,5 @@ module.exports = {
     '\\.module\\.css$': 'identity-obj-proxy',
     '\\.css$': require.resolve('./style-mock.js'),
   },
+  watchPlugins: ['jest-watch-select-projects'],
 }
