@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  ...require('./jest.common'),
+  ...require('./jest-common'),
   displayName: 'server',
   coverageDirectory: path.join('__dirname', '../coverage/server'),
   testEnvironment: 'jest-environment-node',
