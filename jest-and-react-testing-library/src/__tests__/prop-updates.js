@@ -11,6 +11,7 @@ test('entering an invalid value shows an error message', () => {
 
   expect(screen.getByRole('alert')).toHaveTextContent(/the number is invalid/i)
 
-  // Demonstrate the capability of rerender whit prop changing
   rerender(<FavoriteNumber max={10} />)
+
+  expect(screen.queryByRole('alert')).toBeNull()
 })
