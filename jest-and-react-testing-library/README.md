@@ -40,3 +40,15 @@ _Course material for testing React components using react-testing-library_
 > Note: the setup for this project uses kcd-scripts. Don't worry about that. You
 > can learn about how to configure jest properly in the "Configure Jest for
 > Testing JavaScript Applications" module of TestingJavaScript.com
+
+### Updates / recommendations
+
+1) Use `screen` from `@testing-library/react` instead of the returned values such as `getByLabelText`, `getByText`, etc.
+
+2) Use `useEvent` from `@testing-library/user-event` rather than `fireEvent` from `@testing-library/react`.
+
+3) Use `waitFor` rather the `wait`, both from `@testing-library/react`.
+
+4) With the `Router`, it used be recommended to create a memory history using `createMemoryHistory` from `history` and render the `Router` from `react-router-dom`. Now the recommendation is using the `window.history.pushState()` and render the `BrowserRouter` from `react-router-dom`.
+
+5) Video about MSW.
