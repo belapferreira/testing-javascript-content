@@ -5,6 +5,9 @@ _Course material for testing React components using react-testing-library_
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
+- [Updates / recommendations](#updates--recommendations)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 - `react-dom.js` - Render a React component for testing
@@ -43,12 +46,18 @@ _Course material for testing React components using react-testing-library_
 
 ### Updates / recommendations
 
-1) Use `screen` from `@testing-library/react` instead of the returned values such as `getByLabelText`, `getByText`, etc.
+1. Use `screen` from `@testing-library/react` instead of the returned values
+   such as `getByLabelText`, `getByText`, etc.
 
-2) Use `useEvent` from `@testing-library/user-event` rather than `fireEvent` from `@testing-library/react`.
+2. Use `userEvent` from `@testing-library/user-event` rather than `fireEvent`
+   from `@testing-library/react`.
 
-3) Use `waitFor` rather the `wait`, both from `@testing-library/react`.
+3. Use `waitFor` rather the `wait`, both from `@testing-library/react`.
 
-4) With the `Router`, it used be recommended to create a memory history using `createMemoryHistory` from `history` and render the `Router` from `react-router-dom`. Now the recommendation is using the `window.history.pushState()` and render the `BrowserRouter` from `react-router-dom`.
+4. With the `Router`, it used be recommended to create a memory history using
+   `createMemoryHistory` from `history` and render the `Router` from
+   `react-router-dom`. Now the recommendation is using the
+   `window.history.pushState()` and render the `BrowserRouter` from
+   `react-router-dom`.
 
-5) Video about MSW.
+5. Video about MSW.
