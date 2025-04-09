@@ -1,6 +1,5 @@
 import React from 'react'
-// eslint-disable-next-line testing-library/prefer-wait-for
-import {render, screen, wait} from '@testing-library/react'
+import {render, screen, waitFor} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import {loadGreeting as mockLoadGreeting} from '../api'
 import {GreetingLoader} from '../greeting-loader-01-mocking'
@@ -23,9 +22,7 @@ test('loads greeting on click', async () => {
   expect(mockLoadGreeting).toHaveBeenCalledWith('Mary')
   expect(mockLoadGreeting).toHaveBeenCalledTimes(1)
 
-  // Getting a error when trying to use waitFor: TypeError: (0 , _react2.waitFor) is not a function
-  // eslint-disable-next-line testing-library/prefer-wait-for
-  await wait(() =>
+  await waitFor(() =>
     expect(screen.getByLabelText(/greeting/i)).toHaveTextContent(textGreeting),
   )
 })
