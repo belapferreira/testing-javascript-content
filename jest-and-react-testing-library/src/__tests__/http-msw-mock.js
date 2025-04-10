@@ -4,9 +4,7 @@ import {render, screen, waitFor} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import {rest} from 'msw'
 import {setupServer} from 'msw/node'
-import {GreetingLoader} from '../greeting-loader-01-mocking'
-
-// In order to this test to work, the api import in the greeting-loader-01-mocking.js file should be from '../api-fetch'
+import {GreetingLoader} from '../greeting-loader-03-msw-mocking'
 
 const server = setupServer(
   rest.post('/greeting', (req, res, ctx) => {
