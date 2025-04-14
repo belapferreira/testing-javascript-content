@@ -26,7 +26,9 @@ test('can fill out a form across multiple pages', async () => {
   userEvent.click(await screen.findByText(/review/i))
 
   expect(await screen.findByLabelText(/food/i)).toHaveTextContent(testData.food)
-  expect(await screen.findByLabelText(/drink/i)).toHaveTextContent(testData.drink)
+  expect(await screen.findByLabelText(/drink/i)).toHaveTextContent(
+    testData.drink,
+  )
 
   userEvent.click(await screen.findByText(/confirm/i, {selector: 'button'}))
 
