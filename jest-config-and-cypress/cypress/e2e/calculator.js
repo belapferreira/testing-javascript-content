@@ -5,9 +5,15 @@ describe('anonymous calculator', () => {
     cy.findByText(/^1$/).click()
     cy.findByText(/^\+$/).click()
     cy.findByText(/^2$/).click()
+    // .debug()
+    /* cy.then(subject => {
+      debugger
+      return subject
+    }) */
+   // cy.pause()
     cy.findByText(/^=$/).click()
 
-    cy.findByTestId('total').should('have.text', '3')
+    cy.findByTestId('total').should('have.text', '4')
 
   })
 })
