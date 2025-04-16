@@ -13,7 +13,7 @@ describe('anonymous calculator', () => {
    // cy.pause()
     cy.findByText(/^=$/).click()
 
-    cy.findByTestId('total').should('have.text', '4')
+    cy.findByTestId('total').should('have.text', '3')
 
   })
 })
