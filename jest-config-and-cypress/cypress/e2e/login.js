@@ -4,15 +4,15 @@ describe('login', () => {
   it('should login a existing user', () => {
     const user = buildUser()
 
-    cy.visit('/')
-
-    cy.findByText(/register/i).click()
-    cy.findByLabelText(/username/i).type(user.username)
-    cy.findByLabelText(/password/i).type(user.password)
-    cy.findByText(/submit/i).click()
-    cy.findByText(/logout/i).click()
+    // Register the user
+    cy.request({
+      url: 'http://localhost:3000/register',
+      method: 'POST',
+      body: user,
+    })
 
     // Test login
+    cy.visit('/')
     cy.findByText(/login/i).click()
     cy.findByLabelText(/username/i).type(user.username)
     cy.findByLabelText(/password/i).type(user.password)
